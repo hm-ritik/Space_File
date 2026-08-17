@@ -11,4 +11,6 @@ tempCodeRunnerFile.py
 
 .env 
 __pycache__
+uploads
+.vscode
 

@@ -1,10 +1,8 @@
 from cryptography.fernet import Fernet
-import os
-from dotenv import load_dotenv
+from app.core.config import settings
 
-load_dotenv()
 
-ENCRYPTION_KEY = os.getenv("ENCRYPTION_KEY")
+ENCRYPTION_KEY=settings.ENCRYPTION_KEY
 if not ENCRYPTION_KEY:
     raise RuntimeError("ENCRYPTION_KEY not set in .env")
 
