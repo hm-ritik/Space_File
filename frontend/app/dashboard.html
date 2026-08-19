@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Space File - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <h2>Space File</h2>
+        </div>
+
+        <button id="sidebarProfileTrigger" class="sidebar-profile">
+
+            <div class="sidebar-profile-avatar-wrap">
+
+                <img
+                    id="sidebarProfileAvatar"
+                    class="sidebar-profile-avatar"
+                    src=""
+                    alt="Your profile picture"
+                >
+
+                <div
+                    id="sidebarProfilePlaceholder"
+                    class="sidebar-profile-placeholder"
+                >
+                    👤
+                </div>
+
+            </div>
+
+            <span id="sidebarProfileName" class="sidebar-profile-name">
+                Loading...
+            </span>
+
+        </button>
+
+        <nav class="sidebar-nav">
+
+            <button class="nav-item active" data-section="overview">
+                Overview
+            </button>
+
+            <button class="nav-item" data-section="documents">
+                Documents
+            </button>
+
+            <button class="nav-item" data-section="images">
+                Images
+            </button>
+
+            <button class="nav-item" data-section="password">
+                Change Password
+            </button>
+
+        </nav>
+
+        <button id="logoutButton" class="logout-button">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1 id="pageTitle">Overview</h1>
+                <p id="pageSubtitle">
+                    Manage your files and account.
+                </p>
+            </div>
+
+        </header>
+
+
+        <div id="messageBox" class="dashboard-message"></div>
+
+
+        <!-- =========================
+             OVERVIEW
+        ========================== -->
+
+        <section id="overview" class="dashboard-section active-section">
+
+            <div class="welcome-box">
+
+                <div>
+                    <p class="small-label">Welcome back</p>
+
+                    <h2 id="welcomeName">
+                        Loading...
+                    </h2>
+
+                    <p>
+                        Keep your documents and images organized in one place.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-label">Documents</span>
+                    <strong id="documentCount">0</strong>
+                    <span class="stat-limit">of 10</span>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">Images</span>
+                    <strong id="imageCount">0</strong>
+                    <span class="stat-limit">of 10</span>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <h3>Quick actions</h3>
+
+                <div class="quick-action-row">
+
+                    <button
+                        class="secondary-button"
+                        data-section-button="documents"
+                    >
+                        Manage Documents
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        data-section-button="images"
+                    >
+                        Manage Images
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        data-section-button="profile"
+                    >
+                        View Profile
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOCUMENTS
+        ========================== -->
+
+        <section id="documents" class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Documents</h2>
+                    <p>Upload and manage your PDF documents.</p>
+                </div>
+
+                <span id="documentLimit" class="file-count">
+                    0/10
+                </span>
+
+            </div>
+
+
+            <div class="upload-box">
+
+                <label for="documentInput">
+                    Choose a PDF
+                </label>
+
+                <input
+                    type="file"
+                    id="documentInput"
+                    accept=".pdf,application/pdf"
+                >
+
+                <button id="uploadDocumentButton" class="primary-button">
+                    Upload
+                </button>
+
+            </div>
+
+
+            <div id="documentsList" class="file-list">
+
+                <div class="empty-state">
+                    No documents uploaded yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             IMAGES
+        ========================== -->
+
+        <section id="images" class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Images</h2>
+                    <p>Upload and manage your images.</p>
+                </div>
+
+                <span id="imageLimit" class="file-count">
+                    0/10
+                </span>
+
+            </div>
+
+
+            <div class="upload-box">
+
+                <label for="imageInput">
+                    Choose an image
+                </label>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept=".jpg,.jpeg,.png,.webp"
+                >
+
+                <button id="uploadImageButton" class="primary-button">
+                    Upload
+                </button>
+
+            </div>
+
+
+            <div id="imagesList" class="file-list">
+
+                <div class="empty-state">
+                    No images uploaded yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+        <section id="profile" class="dashboard-section">
+
+            <div class="profile-page">
+
+                <div class="profile-banner"></div>
+
+                <div class="profile-identity">
+
+                    <div class="profile-avatar-wrap">
+
+                        <img
+                            id="profilePicture"
+                            class="profile-picture"
+                            src=""
+                            alt="Profile picture"
+                        >
+
+                        <div
+                            id="profilePlaceholder"
+                            class="profile-placeholder"
+                        >
+                            👤
+                        </div>
+
+                    </div>
+
+                    <h2 id="profileName" class="profile-page-name">
+                        Loading...
+                    </h2>
+
+                </div>
+
+
+                <div class="profile-stats-row">
+
+                    <button
+                        class="profile-stat"
+                        data-section-button="documents"
+                    >
+                        <strong id="profileDocumentCount">0</strong>
+                        <span>Documents</span>
+                    </button>
+
+                    <button
+                        class="profile-stat"
+                        data-section-button="images"
+                    >
+                        <strong id="profileImageCount">0</strong>
+                        <span>Images</span>
+                    </button>
+
+                </div>
+
+
+                <div class="profile-picture-actions">
+
+                    <h3>Profile picture</h3>
+
+                    <input
+                        type="file"
+                        id="profilePictureInput"
+                        accept=".jpg,.jpeg,.png,.webp"
+                    >
+
+                    <div class="button-row">
+
+                        <button
+                            id="uploadProfileButton"
+                            class="primary-button"
+                        >
+                            Upload
+                        </button>
+
+                        <button
+                            id="removeProfileButton"
+                            class="danger-button"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CHANGE PASSWORD
+        ========================== -->
+
+        <section id="password" class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Change Password</h2>
+                    <p>Update your account password.</p>
+                </div>
+
+            </div>
+
+
+            <div class="password-card">
+
+                <form id="passwordForm">
+
+                    <div class="form-group">
+
+                        <label for="currentPassword">
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="newPassword">
+                            New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="changePasswordButton"
+                        class="primary-button"
+                    >
+                        Update Password
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/documents.js"></script>
+<script src="js/images.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/change_password.js"></script>
+
+</body>
+</html>

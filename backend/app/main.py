@@ -9,14 +9,12 @@ from app.models.students_model import Student
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # startup
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield
-    # shutdown (nothing needed yet, but this is where it'd go)
+   
 
-
-app = FastAPI(title="Ace Pace", lifespan=lifespan)
+app = FastAPI(title="Space File" , lifespan=lifespan)
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(

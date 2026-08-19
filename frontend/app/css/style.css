@@ -1,0 +1,1012 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f3;
+    color: #222;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.brand h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.brand p {
+    color: #777;
+    font-size: 14px;
+}
+
+.login-card {
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    padding: 28px;
+}
+
+.login-card h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 7px;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    height: 44px;
+    padding: 0 12px;
+
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+
+    font-size: 14px;
+    outline: none;
+
+    background: #fff;
+}
+
+.form-group input:focus {
+    border-color: #777;
+}
+
+#loginButton {
+    width: 100%;
+    height: 44px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #222;
+    color: white;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    margin-top: 4px;
+}
+
+#loginButton:hover {
+    background: #333;
+}
+
+#loginButton:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+.message {
+    min-height: 20px;
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+.message.error {
+    color: #c0392b;
+}
+
+.message.success {
+    color: #26734d;
+}
+
+.account-help {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+
+    margin-top: 24px;
+}
+
+.account-help a {
+    color: #444;
+    text-decoration: underline;
+}
+
+.github-link {
+    display: block;
+    width: 100%;
+
+    margin-top: 20px;
+    padding: 11px;
+
+    text-align: center;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    color: #333;
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.github-link:hover {
+    background: #eee;
+}
+
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+@media (max-width: 500px) {
+
+    .auth-page {
+        padding: 20px 15px;
+    }
+
+    .login-card {
+        padding: 22px;
+    }
+
+    .brand h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-layout {
+    min-height: 100vh;
+    display: flex;
+    background: #f5f5f3;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 220px;
+    min-height: 100vh;
+
+    background: #ffffff;
+    border-right: 1px solid #dedede;
+
+    padding: 24px 14px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    padding: 0 10px 30px;
+}
+
+.sidebar-brand h2 {
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+
+    border: none;
+    background: transparent;
+
+    padding: 10px 10px 18px;
+    margin-bottom: 12px;
+
+    border-bottom: 1px solid #ebebe9;
+
+    text-align: left;
+    cursor: pointer;
+
+    border-radius: 5px;
+}
+
+.sidebar-profile:hover {
+    background: #f8f8f6;
+}
+
+.sidebar-profile.active .sidebar-profile-name {
+    color: #222;
+    font-weight: 600;
+}
+
+.sidebar-profile-avatar-wrap {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+}
+
+.sidebar-profile-avatar,
+.sidebar-profile-placeholder {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+}
+
+.sidebar-profile-avatar {
+    object-fit: cover;
+    display: none;
+}
+
+.sidebar-profile-placeholder {
+    background: #eeeeec;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+}
+
+.sidebar-profile-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    width: 100%;
+
+    border: none;
+    background: transparent;
+
+    text-align: left;
+
+    padding: 10px 12px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+    color: #555;
+
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background: #f1f1ef;
+    color: #222;
+}
+
+.nav-item.active {
+    background: #eeeeec;
+    color: #222;
+    font-weight: 500;
+}
+
+.logout-button {
+    margin-top: auto;
+
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+
+    background: #fff;
+
+    color: #555;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.logout-button:hover {
+    background: #f5f5f3;
+    color: #222;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.dashboard-main {
+    flex: 1;
+
+    max-width: 1100px;
+
+    padding: 34px 40px;
+
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.dashboard-header p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.dashboard-section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome-box {
+    background: #ffffff;
+
+    border: 1px solid #dedede;
+    border-radius: 7px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+}
+
+.small-label {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.welcome-box h2 {
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.welcome-box p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-radius: 7px;
+
+    padding: 22px;
+}
+
+.stat-label {
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.stat-card strong {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.stat-limit {
+    color: #999;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.quick-actions {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-radius: 7px;
+
+    padding: 22px;
+}
+
+.quick-actions h3 {
+    font-size: 16px;
+    font-weight: 500;
+
+    margin-bottom: 16px;
+}
+
+.quick-action-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 22px;
+    font-weight: 500;
+
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: #777;
+    font-size: 14px;
+}
+
+.file-count {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-button,
+.secondary-button,
+.danger-button {
+    border-radius: 5px;
+
+    padding: 10px 15px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.primary-button {
+    border: none;
+
+    background: #222;
+    color: #fff;
+}
+
+.primary-button:hover {
+    background: #333;
+}
+
+.secondary-button {
+    border: 1px solid #ccc;
+
+    background: #fff;
+    color: #333;
+}
+
+.secondary-button:hover {
+    background: #f2f2f0;
+}
+
+.danger-button {
+    border: 1px solid #d8bebe;
+
+    background: #fff;
+    color: #a33;
+}
+
+.danger-button:hover {
+    background: #faf0f0;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+
+/* =========================================
+   UPLOAD
+========================================= */
+
+.upload-box {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-radius: 7px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.upload-box label {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+
+    color: #555;
+}
+
+.upload-box input[type="file"] {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FILE LIST
+========================================= */
+
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.file-card {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-radius: 7px;
+
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.file-info {
+    min-width: 0;
+}
+
+.file-name {
+    font-size: 14px;
+    font-weight: 500;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-actions {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.file-action {
+    padding: 7px 11px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    background: #fff;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.file-action:hover {
+    background: #f2f2f0;
+}
+
+.file-action.delete {
+    color: #a33;
+}
+
+.file-preview {
+    margin-top: 15px;
+
+    border-top: 1px solid #eee;
+
+    padding-top: 15px;
+}
+
+.file-preview img {
+    max-width: 100%;
+    max-height: 500px;
+
+    display: block;
+
+    margin: 0 auto;
+}
+
+.file-preview iframe {
+    width: 100%;
+    height: 500px;
+
+    border: none;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-radius: 7px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-page {
+    max-width: 640px;
+}
+
+.profile-banner {
+    height: 130px;
+
+    border-radius: 7px 7px 0 0;
+
+    background: linear-gradient(135deg, #2b2b2b 0%, #555 100%);
+}
+
+.profile-identity {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-top: none;
+
+    padding: 0 25px 24px;
+
+    text-align: center;
+}
+
+.profile-avatar-wrap {
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto;
+
+    /* pull the avatar up so it overlaps the banner above it */
+    margin-top: -55px;
+
+    border: 4px solid #fff;
+    border-radius: 50%;
+
+    background: #fff;
+}
+
+.profile-picture,
+.profile-placeholder {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+.profile-picture {
+    object-fit: cover;
+    display: none;
+}
+
+.profile-placeholder {
+    background: #eeeeec;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 40px;
+}
+
+.profile-page-name {
+    margin-top: 14px;
+
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.profile-stats-row {
+    display: flex;
+
+    border: 1px solid #dedede;
+    border-top: none;
+
+    background: #fff;
+}
+
+.profile-stat {
+    flex: 1;
+
+    border: none;
+    border-right: 1px solid #ebebe9;
+
+    background: transparent;
+
+    padding: 16px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.profile-stat:last-child {
+    border-right: none;
+}
+
+.profile-stat:hover {
+    background: #f8f8f6;
+}
+
+.profile-stat strong {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.profile-stat span {
+    font-size: 12px;
+    color: #888;
+}
+
+.profile-picture-actions {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-top: none;
+    border-radius: 0 0 7px 7px;
+
+    padding: 22px;
+}
+
+.profile-picture-actions h3 {
+    font-size: 16px;
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+.password-card {
+    background: #fff;
+
+    border: 1px solid #dedede;
+    border-radius: 7px;
+
+    padding: 25px;
+
+    max-width: 520px;
+}
+
+.password-card .form-group {
+    margin-bottom: 18px;
+}
+
+.password-card input {
+    width: 100%;
+
+    height: 42px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    padding: 0 11px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.password-card input:focus {
+    border-color: #777;
+}
+
+.password-card label {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+
+    color: #444;
+}
+
+
+/* =========================================
+   MESSAGES
+========================================= */
+
+.dashboard-message {
+    display: none;
+
+    padding: 10px 13px;
+
+    border-radius: 5px;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+}
+
+.dashboard-message.success {
+    display: block;
+
+    background: #edf7f0;
+    border: 1px solid #c8e4d0;
+    color: #26734d;
+}
+
+.dashboard-message.error {
+    display: block;
+
+    background: #faf0f0;
+    border: 1px solid #e5caca;
+    color: #a33;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .dashboard-layout {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+
+        border-right: none;
+        border-bottom: 1px solid #dedede;
+
+        padding: 15px;
+    }
+
+    .sidebar-brand {
+        padding: 5px 5px 15px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+    }
+
+    .nav-item {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .logout-button {
+        margin-top: 12px;
+    }
+
+    .dashboard-main {
+        padding: 25px 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .file-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .file-actions {
+        width: 100%;
+    }
+
+    .file-action {
+        flex: 1;
+    }
+
+    .profile-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
