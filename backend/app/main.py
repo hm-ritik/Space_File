@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-
+from sqlalchemy import text
 from app.routes.students_routes import router as student_router
 from app.routes.file_route import router as file_router
 from app.core.database import engine, Base
@@ -9,8 +9,8 @@ from app.models.students_model import Student
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    async with engine.connect() as conn:
+        await conn.execute(text("SELECT 1"))
     yield
    
 
