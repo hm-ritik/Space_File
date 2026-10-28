@@ -38,8 +38,7 @@ I also wanted to build something that looks like a real backend, not a tutorial 
 | Encryption | Fernet (`cryptography`) |
 | Auth | JWT |
 | Migrations | Alembic |
-| Frontend | Streamlit |
-| Hosting | Render |
+| Frontend   | Javascript |
 
 ---
 
