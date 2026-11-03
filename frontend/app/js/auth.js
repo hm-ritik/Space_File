@@ -1,14 +1,9 @@
-// ============================================================
-// auth.js
-// Runs only on index.html (the login page).
-// ============================================================
-
 const loginForm = document.getElementById("loginForm");
 const loginButton = document.getElementById("loginButton");
 const loginMessage = document.getElementById("loginMessage");
 
 
-// If already logged in, skip the login page entirely
+
 if (getToken()) {
     window.location.href = "dashboard.html";
 }
