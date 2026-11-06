@@ -1,11 +1,9 @@
 # Space File
 
-A private place for students to keep their documents: notes, assignments, certificates, the PDF you'll definitely need at 2 a.m. before a deadline.
+A private place for students to keep their documents: notes, assignments, certificates. 
 
 You sign up, upload your files, and get them back whenever you need them. Nobody else can see them. Not other users, and not someone who guesses a URL.
 
-
-> This project started life as **Ace Pace**. I renamed it to Space File, so you may still see the old name in a few places.
 
 ---
 
